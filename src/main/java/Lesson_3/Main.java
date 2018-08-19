@@ -37,31 +37,31 @@ public class Main {
 //            System.out.print((char) x);
 //        }
 // Task3
-      long t = System.currentTimeMillis();
-        readPage("6.txt", 689);
-        System.out.println();
-        System.out.println(System.currentTimeMillis() - t);
-    }
-
-    public static void readPage(String filename, int page) {
-        try (RandomAccessFile raf = new RandomAccessFile(filename, "r")) {
-            long length = raf.length();
-            long start = 1800 * (page - 1);
-            raf.seek(start);
-
-            if (start > length) {
-                System.out.println("Вылетели за границы файла");
-            } else if (start + 1800 > length) {
-                for (int i = 0; i < length - start; i++) {
-                    System.out.print((char) raf.read());
-                }
-            } else {
-                for (int i = 0; i < 1800; i++) {
-                    System.out.print((char) raf.read());
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//      long t = System.currentTimeMillis();
+//        readPage("6.txt", 689);
+//        System.out.println();
+//        System.out.println(System.currentTimeMillis() - t);
+//    }
+//
+//    public static void readPage(String filename, int page) {
+//        try (RandomAccessFile raf = new RandomAccessFile(filename, "r")) {
+//            long length = raf.length();
+//            long start = 1800 * (page - 1);
+//            raf.seek(start);
+//
+//            if (start > length) {
+//                System.out.println("Вылетели за границы файла");
+//            } else if (start + 1800 > length) {
+//                for (int i = 0; i < length - start; i++) {
+//                    System.out.print((char) raf.read());
+//                }
+//            } else {
+//                for (int i = 0; i < 1800; i++) {
+//                    System.out.print((char) raf.read());
+//                }
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
